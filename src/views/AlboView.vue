@@ -33,7 +33,7 @@
     methods: {
       d() {
         axios
-          .get('http://localhost:8080/'+this.page+'/info.0.json')
+          .get('https://mby-todo.netlify.app/'+this.page+'/info.0.json')
           .then(response => (this.info = response.data))
       }
     }
