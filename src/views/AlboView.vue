@@ -11,7 +11,7 @@
       <v-pagination
         v-model="page"
         color="secondary"
-        :length="614"
+        :length="length"
         :total-visible="7"
       ></v-pagination>
     </div>
@@ -26,15 +26,21 @@
     data() {
       return {
         page: 100,
+        length: null,
         info: null,
       }
     },
-    created() {this.d()},
+    created() {this.d(); this.getLength()},
     methods: {
       d() {
         axios
           .get('/api/'+this.page+'/info.0.json')
           .then(response => {this.info = response.data;})
+      },
+      getLength() {
+        axios
+          .get('/api/info.0.json')
+          .then(response => {this.length = response.data.num})
       }
     }
   }
