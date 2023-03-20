@@ -33,7 +33,7 @@
     methods: {
       d() {
         axios
-          .get('https://mby-todo.netlify.app/'+this.page+'/info.0.json')
+          .get('/'+this.page+'/info.0.json')
           .then(response => {this.info = response.data; console.log(this.info)})
       }
     }
