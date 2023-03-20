@@ -10,7 +10,7 @@
         </div>
         <div class="space-fixer">
           <router-link v-if="loggedUser!==''" to="/login"><v-btn color="secondary" size="large">Logout</v-btn></router-link>
-          <router-link v-if="loggedUser==='' && ($route.name === 'archive' || $route.name === 'albo')" to="/login"><v-btn color="secondary" size="large">Login</v-btn></router-link>
+          <router-link v-if="loggedUser==='' && (['archive', 'albo', 'home'].includes($route.name))" to="/login"><v-btn color="secondary" size="large">Login</v-btn></router-link>
         </div>
       </div>
       <v-divider style="margin-top: 1rem;"></v-divider>
