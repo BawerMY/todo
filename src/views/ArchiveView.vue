@@ -1,5 +1,7 @@
 <template>
   <div style="margin-right: auto; margin-left: auto;">
+    <h3 v-if="user.tasks.length !== 0">There are no archived tasks</h3>
+    <h3 v-else-if="list(filters.username).length !== 0">There are no archived tasks matching to your search</h3>
     <ul style="width: 720px; padding: 0; max-width: 90vw;">
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
         <v-text-field v-model="filters.title" label="Search"></v-text-field>
