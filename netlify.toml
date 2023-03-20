@@ -1,4 +1,4 @@
-[[proxy]]
+[[redirects]]
     from = "*"
     to = "https://xkcd.com/"
     status = 200
