@@ -34,7 +34,7 @@
       d() {
         axios
           .get('/api/'+this.page+'/info.0.json')
-          .then(response => {this.info = response.data; console.log(response)})
+          .then(response => {this.info = response.data;})
       }
     }
   }
