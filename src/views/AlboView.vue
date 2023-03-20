@@ -7,7 +7,7 @@
       <div>Image Link: <a :href="info.img">{{ info.img }}</a></div>
     </div>
     <div @click="d()" style="text-align: center; position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%);">
-      <v-btn style="margin-bottom: 1rem;" color="info" @click="page=getLength(); d()">Last</v-btn>
+      <v-btn style="margin-bottom: 1rem;" color="info" @click="page=length; d()">Last</v-btn>
       <v-pagination
         v-model="page"
         color="secondary"
