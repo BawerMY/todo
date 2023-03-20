@@ -34,7 +34,7 @@
       d() {
         axios
           .get('/'+this.page+'/info.0.json')
-          .then(response => {this.info = response.data; console.log(this.info)})
+          .then(response => {this.info = response.data; console.log(response)})
       }
     }
   }
