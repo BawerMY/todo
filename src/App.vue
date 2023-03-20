@@ -50,29 +50,7 @@ export default {
   data() {
     return {
       loggedUser: '',
-      users: [
-        {
-          username: "s",
-          tasks: [
-            {
-              title: 'Do the homeworks1',
-              completed: false,
-            },
-            {
-              title: 'Do the homeworks2',
-              completed: true,
-            },
-            {
-              title: 'Do the ss3',
-              completed: true,
-            },
-            {
-              title: 'Do the homeworks4',
-              completed: false,
-            },
-          ]
-        }
-      ],
+      users: [],
       archive: [],
     }
   },
