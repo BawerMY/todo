@@ -1,10 +1,15 @@
 <template>
   <div style="margin-right: auto; margin-left: auto;">
     <div style="display: flex; align-items: center; gap: 1rem; justify-content: center;">
-      <v-text-field color="white" autofocus :rules="rules" label="Username" @change="$event => {if(username.replace(' ', '') !== '') emptyError=false}" v-model="username" id="login-input"></v-text-field>
+      <v-text-field autofocus :rules="rules" label="Username" @change="$event => {if(username.replace(' ', '') !== '') emptyError=false}" v-model="username" id="login-input"></v-text-field>
       <v-btn color="secondary" @click="$event => {if(username.replace(' ', '') === '' || !usernames.includes(username)) emptyError=true;  else login(); $emit('destroy')}">Login</v-btn>
     </div>
     <router-link to="/signup">Don't have an account? Singup</router-link>
+      
+
+
+
+      
   </div>
 </template>
 
