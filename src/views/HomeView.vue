@@ -6,7 +6,7 @@
         <li style="list-style-type: none;" v-for="task, i in uncompleteds()" :key="i">
           <v-card color="#191919" style="width: 100%; flex-wrap: wrap; margin-top: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; padding: 0.5rem; border: 1px, solid black;">
             <button><img alt="" src="../assets/check_box_outline.svg" style="width: 36px; height: 36px; color: white;" @click="task.completed = !task.completed; reorder()"/></button>
-            <v-text-field v-if="editing===i" v-model="newTitle" style="width: calc(720px-81px); color: white;" label="Change Title"></v-text-field>
+            <v-text-field v-if="editing===i" v-model="newTitle" style="width: calc(720px-81px);" color="white" label="Change Title"></v-text-field>
             <h3 v-else style="padding-left: 0.5rem; color: white;">{{ task.title }}</h3>
             <div style="margin-left: auto;">
               <v-btn style="margin-right: 1rem;" v-if="editing===i" @click="$event => {editing = -1; task.title=newTitle;}" color="secondary">Done</v-btn>
@@ -25,7 +25,7 @@
         <li style="list-style-type: none;" v-for="task, i in completeds()" :key="i+uncompletedsNr">
           <v-card  color="#191919" style="width: 100%; flex-wrap: wrap; margin-top: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; padding: 0.5rem; border: 1px, solid black;">
             <button><img alt="" src="../assets/check_box.svg" style="width: 36px; height: 36px; color: white;" @click="task.completed = !task.completed; reorder()"/></button>
-            <v-text-field v-if="editing===i+uncompletedsNr" v-model="newTitle" style="width: calc(720px-81px); color: white;" label="Change Title"></v-text-field>
+            <v-text-field v-if="editing===i+uncompletedsNr" v-model="newTitle" style="width: calc(720px-81px);" color="white" label="Change Title"></v-text-field>
             <h3 v-else style="padding-left: 0.5rem; color: white;">{{ task.title }}</h3>
             <div style="margin-left: auto;">
               <v-btn style="margin-right: 1rem;" v-if="editing===i+uncompletedsNr" @click="$event => {editing = -1; task.title=newTitle;}" color="secondary">Done</v-btn>
@@ -37,13 +37,13 @@
         </li>
       </ul>
       <div class="add">
-        <v-text-field style="width: 100%; color: white;" v-model="newTask" label="Add New Task"></v-text-field>
+        <v-text-field style="width: 100%;" color="white" v-model="newTask" label="Add New Task"></v-text-field>
         <v-btn color="secondary" @click="$event => addTask()">Add</v-btn>
       </div>
       <div v-if="deleting !== -1" style="position: fixed; background-color: #0000005A; top: 0; left: 0; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;">
         <v-card style="padding: 2rem; color: white; width: 720px; max-width: 90vw;">
-        <h3 style="color: white;">Are you sure to delete this task:</h3>
-        <h2 style="color: white;">{{ user.tasks[deleting].title }}</h2>
+        <h3>Are you sure to delete this task:</h3>
+        <h2>{{ user.tasks[deleting].title }}</h2>
         <div style="display: flex; gap:1rem; justify-content: end;">
           <v-btn @click="$event => deleting = -1" color="secondary">Cancel</v-btn>
           <v-btn @click="$emit('delete', deleting); deleting=-1" color="error">Delete</v-btn>

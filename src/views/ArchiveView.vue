@@ -1,8 +1,8 @@
 <template>
   <div style="margin-right: auto; margin-left: auto;">
       <div style="width: 720px; max-width: 90vw; display: flex; gap: 1rem; flex-wrap: wrap;">
-        <v-text-field style="color: white;" v-model="filters.title" label="Search"></v-text-field>
-        <v-select style="color: white;" class="filter-select" v-model="filters.username" clearable label="Filter by user" :items="usernames"></v-select>
+        <v-text-field color="white" v-model="filters.title" label="Search"></v-text-field>
+        <v-select color="white" class="filter-select" v-model="filters.username" clearable label="Filter by user" :items="usernames"></v-select>
       </div>
     <ul v-if="list(filters.username, filters.title).length !== 0" style="width: 720px; padding: 0; max-width: 90vw;">
       <li style="list-style-type: none;" v-for="task, i in list(filters.username, filters.title)" :key="i">
