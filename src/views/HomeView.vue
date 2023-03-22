@@ -1,11 +1,11 @@
 <template>
     <div style="margin-right: auto; margin-left: auto; max-width: 90vw; margin-top: 2rem; color: white;">
-      <h1 v-if="uncompleteds().length!==0">Tasks to do</h1>
+      <h1 v-if="uncompleteds().length!==0" style="color: white;">Tasks to do</h1>
       <h3 v-else><i>Nothing to do</i></h3>
       <ul style="width: 720px; max-width: 90vw; padding: 0;">
         <li style="list-style-type: none;" v-for="task, i in uncompleteds()" :key="i">
           <v-card color="#191919" style="width: 100%; flex-wrap: wrap; margin-top: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; padding: 0.5rem; border: 1px, solid black;">
-            <button><img alt="" src="../assets/check_box_outline.svg" style="width: 36px; height: 36px;" @click="task.completed = !task.completed; reorder()"/></button>
+            <button><img alt="" src="../assets/check_box_outline.svg" style="width: 36px; height: 36px; color: white;" @click="task.completed = !task.completed; reorder()"/></button>
             <v-text-field v-if="editing===i" v-model="newTitle" style="width: calc(720px-81px); color: white;" label="Change Title"></v-text-field>
             <h3 v-else style="padding-left: 0.5rem; color: white;">{{ task.title }}</h3>
             <div style="margin-left: auto;">
@@ -24,7 +24,7 @@
       <ul style="width: 720px; max-width: 90vw; padding: 0;">
         <li style="list-style-type: none;" v-for="task, i in completeds()" :key="i+uncompletedsNr">
           <v-card  color="#191919" style="width: 100%; flex-wrap: wrap; margin-top: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; padding: 0.5rem; border: 1px, solid black;">
-            <button><img alt="" src="../assets/check_box.svg" style="width: 36px; height: 36px;" @click="task.completed = !task.completed; reorder()"/></button>
+            <button><img alt="" src="../assets/check_box.svg" style="width: 36px; height: 36px; color: white;" @click="task.completed = !task.completed; reorder()"/></button>
             <v-text-field v-if="editing===i+uncompletedsNr" v-model="newTitle" style="width: calc(720px-81px); color: white;" label="Change Title"></v-text-field>
             <h3 v-else style="padding-left: 0.5rem; color: white;">{{ task.title }}</h3>
             <div style="margin-left: auto;">
