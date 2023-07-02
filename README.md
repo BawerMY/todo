@@ -1,3 +1,2 @@
 # Vue TODO
-[Run Vue Todo](https://mby-todo.netlify.app/)https://mby-todo.netlify.app/
-https://mby-todo.netlify.app/
+[Click To Run Vue TODO](https://mby-todo.netlify.app/)
